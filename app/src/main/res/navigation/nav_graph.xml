@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapplication.fragments.fragmentOne"
+        android:label="fragmentOne"
+        tools:layout="@layout/fragment_one">
+
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplication.fragments.fragmentTwo"
+        android:label="fragmentTwo"
+        tools:layout="@layout/fragment_two">
+
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=""/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.myapplication.fragments.fragmentThree"
+        android:label="fragmentThree"
+        tools:layout="@layout/fragment_three">
+        <action
+            android:id="@+id/action_dashboardFragment_to_phoneFragment"
+            app:destination="@id/phoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.myapplication.fragments.fragmentFour"
+        android:label="fragmentFour"
+        tools:layout="@layout/fragment_four">
+
+        <argument
+            android:name="phoneNumber"
+            app:argType="integer"
+            android:defaultValue="0"/>
+
+    </fragment>
+</navigation>
